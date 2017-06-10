@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSimDocument>
+	<startFile>
+		
+		<!--Defaults-->
+		<defaults>
+			
+			<!--Set joint parameters-->
+			<JointParameters name="default">
+				<!--Flag (true or false) indicating whether or not this joint 
+				will be used during kinematic calibration-->
+				<apply>true</apply>
+				<!--Name given to joint in .osim file-->
+				<joint_name>joint_name</joint_name>
+				<!--Type of joint, e.g., custom, weld, pin, etc.-->
+				<joint_type>joint_type</joint_type>
+				<!--Which location_in_parent design parameters are 
+				to be included in the optimization.
+				For example, if tx and ty, that is the fore-aft and vertical directions,  
+				are to be included in the optimization, then location_in_parent 
+				should be set to: 1 1 0-->
+				<location_in_parent_params>0 0 0</location_in_parent_params>
+				<!--Which orientation_in_parent design parameters are 
+				to be included in the optimization.
+				For example, if ry and rz, that is rotation about the vertical and 
+				medial-lateral axes, are to be included in the optimization, then 
+				orientation_in_parent should be set to: 0 1 1-->
+				<orientation_in_parent_params>0 0 0</orientation_in_parent_params>
+				<!--Which location_in_child design parameters are 
+				to be included in the optimization-->
+				<location_in_child_params>0 0 0</location_in_child_params>
+				<!--Which orientation_in_child design parameters are 
+				to be included in the optimization-->
+				<orientation_in_child_params>0 0 0</orientation_in_child_params>
+				<!--Maximum allowable movement change [in model length units] for 
+				location_in_parent design parameters-->
+				<location_in_parent_maxParamChange>0 0 0</location_in_parent_maxParamChange>
+				<!--Maximum allowable angle change [in degrees] for 
+				orientation_in_parent design parameters-->
+				<orientation_in_parent_maxParamChange>0 0 0</orientation_in_parent_maxParamChange>
+				<!--Maximum allowable movement change [in model length units] for 
+				location_in_child design parameters-->
+				<location_in_child_maxParamChange>0 0 0</location_in_child_maxParamChange>
+				<!--Maximum allowable angle change [in degrees] for 
+				orientation_in_child design parameters-->
+				<orientation_in_child_maxParamChange>0 0 0</orientation_in_child_maxParamChange>
+			</JointParameters>
+			
+			<!--Set marker plate parameters-->	
+			<MarkerPlateParameters name="default">
+				<!--Flag indicating whether or not this marker plate joint will be used 
+				during kinematic calibration-->
+				<apply>true</apply>
+				<!--Name given to marker plate joint in .osim file-->
+				<marker_plate_name>plate_name</marker_plate_name>
+				<!--Type of joint used for the marker plate-->
+				<marker_plate_joint_type>weld</marker_plate_joint_type>
+				<!--Which location_in_parent design parameters are 
+				to be included in the optimization.
+				For example, if tx and ty, that is the fore-aft and vertical directions,  
+				are to be included in the optimization, then location_in_parent 
+				should be set to: 1 1 0-->
+				<location_in_parent_params>0 0 0</location_in_parent_params>
+				<!--Which orientation_in_parent design parameters are 
+				to be included in the optimization.
+				For example, if ry and rz, that is rotation about the vertical and 
+				medial-lateral axes, are to be included in the optimization, then 
+				orientation_in_parent should be set to: 0 1 1-->
+				<orientation_in_parent_params>0 0 0</orientation_in_parent_params>
+				<!--Which location_in_child design parameters are 
+				to be included in the optimization-->
+				<location_in_child_params>0 0 0</location_in_child_params>
+				<!--Which orientation_in_child design parameters are 
+				to be included in the optimization-->
+				<orientation_in_child_params>0 0 0</orientation_in_child_params>
+				<!--Maximum allowable movement change [in model length units] for 
+				location_in_parent design parameters-->
+				<location_in_parent_maxParamChange>0 0 0</location_in_parent_maxParamChange>
+				<!--Maximum allowable angle change [in degrees] for 
+				orientation_in_parent design parameters-->
+				<orientation_in_parent_maxParamChange>0 0 0</orientation_in_parent_maxParamChange>
+				<!--Maximum allowable movement change [in model length units] for 
+				location_in_child design parameters-->
+				<location_in_child_maxParamChange>0 0 0</location_in_child_maxParamChange>
+				<!--Maximum allowable angle change [in degrees] for 
+				orientation_in_child design parameters-->
+				<orientation_in_child_maxParamChange>0 0 0</orientation_in_child_maxParamChange>
+			</MarkerPlateParameters>
+			
+			<!--Input settings-->
+			<InputSettings>
+				<!--Name of input .osim file-->
+				<input_model_file>model.osim</input_model_file>
+				<!--Inverse kinematics solver accuracy-->
+				<accuracy>1e-5</accuracy>
+				<!--Name of output, i.e., optimized, .osim file-->
+				<output_model_file>optModel.osim</output_model_file>
+				<!--Name of scale set setup file. This is a generic scale set setup file that 
+				will be used in rescaling the optimized model-->
+				<scale_set_file>ScaleSetSetupFile.xml</scale_set_file>
+				<!--Optimization Groupings: Within these tags the user can specify 
+				the file containing marker locations; coordinate file containing pre- 
+				computed joint angles; the order of the optimization; which joint and 
+				marker plates to include in the optimization; indicate if the optimization should 
+				penalize changes in the design parameters; and if the optimization 
+				should enforce joint symmetry, and if so, in which direction 
+				(x, y, and/or z) should the symmetry apply-->
+				<OptimizationGroupings>
+					<OptimizationGroup name="default">
+						<!--Name of input .trc file containing marker locations-->
+						<marker_file>markerFile.trc</marker_file>
+						<!--Name of coordinate .mot file containing pre-computed 
+						joint angles (optional)-->
+						<coordinate_file>expAngles1.mot</coordinate_file>
+						<!--Simulation time range (sec)-->
+						<time_range>0.0 1.00</time_range>
+						<!--Flag indicating if errors should be reported-->
+						<report_errors>false</report_errors>
+						<!--Name of inverse kinematics (IK) output .mot file containing 
+						predicted joint angles-->
+						<output_motion_file>jointAngles.mot</output_motion_file>
+						<!--Flag indicating if model marker locations should be reported-->
+						<report_marker_locations>false</report_marker_locations>
+						<!--Name of IK tasks setup file containing marker and coordinate 
+						(if applicable) weight factors-->
+						<ik_set_file>IKTasksSetupFile.xml</ik_set_file>
+						<!--Optimization order, e.g., 1, 2, 3, etc.-->
+						<optimization_order>1</optimization_order>
+						<!--Joint names to be included in the optimization-->
+						<WhichJoints>
+							<joint_name>joint_name_1</joint_name>
+							<joint_name>joint_name_2</joint_name>
+							<joint_name>joint_name_3</joint_name>
+						</WhichJoints>
+						<!--Marker plate names to be included in the optimization-->
+						<WhichMarkerPlates>
+							<marker_plate_name>marker_plate_name_1</marker_plate_name>
+							<marker_plate_name>marker_plate_name_2</marker_plate_name>
+							<marker_plate_name>marker_plate_name_3</marker_plate_name>
+						</WhichMarkerPlates>
+						<!--Flag (true or false) indicating whether or not to 
+						penalize changes in the design parameters-->
+						<penalize_changes>false</penalize_changes>
+						<!--Symmetry-->
+						<SymmetricJointPair name="default">
+							<!--Which joints are to be symmetric-->
+							<WhichJoints>
+								<joint_name>joint_name_1</joint_name>
+								<joint_name>joint_name_2</joint_name>
+							</WhichJoints>
+							<!--Enforce joint symmetry by indicatng direction 
+							(tx, ty, and/or tz, for translation) or (rx, ry, and/or 
+							rz, for orientation)-->
+							<enforce_joint_symmetry>tx</enforce_joint_symmetry>
+							<enforce_joint_symmetry>ty</enforce_joint_symmetry>
+							<enforce_joint_symmetry>tz</enforce_joint_symmetry>
+							<enforce_joint_symmetry>rx</enforce_joint_symmetry>
+							<enforce_joint_symmetry>ry</enforce_joint_symmetry>
+							<enforce_joint_symmetry>rz</enforce_joint_symmetry>
+							<!--Indicate whether the parameter is reflected
+							For example, if translational symmetry is to be reflected 
+							in the z direction, then is_reflected_translation should 
+							be set to: 0 0 1-->
+							<is_reflected_translation>0 0 0</is_reflected_translation>
+							<is_reflected_orientation>0 0 0</is_reflected_orientation>
+						</SymmetricJointPair>
+						<!--Flag indicating if any rescaling is to occur for this grouping. 
+						This step is to ensure that the correct scaling factors are 
+						reflected in the optimized model-->
+						<scale_segments>false</scale_segments>
+						<!--Set in which direction or directions, i.e., x, y, and/or z, 
+						should the scaling take place-->
+						<scale_directions>0 0 0</scale_directions>
+					</OptimizationGroup>
+				</OptimizationGroupings>
+			</InputSettings>
+			<!--End input settings-->
+			
+		</defaults>
+		<!--End defaults-->
+		
+		<!--Objects-->
+		<objects>
+		
+		<!--Torso marker plate joint setup-->
+		<MarkerPlateParameters name="torsoMarkerPlate">
+			<apply>true</apply>
+			<marker_plate_name>torso_markerPlate_jnt</marker_plate_name>
+			<marker_plate_joint_type>weld</marker_plate_joint_type>
+			<location_in_parent_params>1 1 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.1 0.1 0.1</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 1</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>1 1 1</orientation_in_parent_maxParamChange>
+		</MarkerPlateParameters>
+		
+		<!--Pelvis marker plate joint setup-->
+		<MarkerPlateParameters name="pelvisMarkerPlate">
+			<apply>true</apply>
+			<marker_plate_name>pelvis_markerPlate_jnt</marker_plate_name>
+			<marker_plate_joint_type>weld</marker_plate_joint_type>
+			<location_in_parent_params>1 1 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.05 0.05 0.05</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 1</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>1 1 1</orientation_in_parent_maxParamChange>
+		</MarkerPlateParameters>
+		
+		<!--Right femur marker plate joint setup-->
+		<MarkerPlateParameters name="rightFemurMarkerPlate">
+			<apply>true</apply>
+			<marker_plate_name>femur_r_markerPlate_jnt</marker_plate_name>
+			<marker_plate_joint_type>weld</marker_plate_joint_type>
+			<location_in_parent_params>1 1 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.1 0.1 0.1</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 1</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>1 1 1</orientation_in_parent_maxParamChange>
+		</MarkerPlateParameters>
+		
+		<!--Left femur marker plate joint setup-->
+		<MarkerPlateParameters name="leftFemurMarkerPlate">
+			<apply>true</apply>
+			<marker_plate_name>femur_l_markerPlate_jnt</marker_plate_name>
+			<marker_plate_joint_type>weld</marker_plate_joint_type>
+			<location_in_parent_params>1 1 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.1 0.1 0.1</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 1</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>1 1 1</orientation_in_parent_maxParamChange>
+		</MarkerPlateParameters>
+		
+		<!--Right hip joint setup-->
+		<JointParameters name="rightHipJoint">
+			<apply>true</apply>
+			<joint_name>hip_r</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>0 0 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0 0 0.1</location_in_parent_maxParamChange>
+		</JointParameters>
+		
+		<!--Left hip joint setup-->
+		<JointParameters name="leftHipJoint">
+			<apply>true</apply>
+			<joint_name>hip_l</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>0 0 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0 0 0.1</location_in_parent_maxParamChange>
+		</JointParameters>
+		
+		<!--Right knee joint setup-->
+		<JointParameters name="rightKneeJoint">
+			<apply>true</apply>
+			<joint_name>femur_coord_r</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>1 1 0</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.1 0.1 0</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 0</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>5 5 0</orientation_in_parent_maxParamChange>
+			<orientation_in_child_params>1 1 0</orientation_in_child_params>
+			<orientation_in_child_maxParamChange>5 5 0</orientation_in_child_maxParamChange>
+		</JointParameters>
+		
+		<!--Right tibia marker plate joint setup-->
+		<MarkerPlateParameters name="rightTibiaMarkerPlate">
+			<apply>true</apply>
+			<marker_plate_name>tibia_r_markerPlate_jnt</marker_plate_name>
+			<marker_plate_joint_type>weld</marker_plate_joint_type>
+			<location_in_parent_params>1 1 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.1 0.1 0.1</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 1</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>5 5 5</orientation_in_parent_maxParamChange>
+		</MarkerPlateParameters>
+		
+		<!--Left knee joint setup-->
+		<JointParameters name="leftKneeJoint">
+			<apply>true</apply>
+			<joint_name>femur_coord_l</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>1 1 0</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.1 0.1 0</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 0</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>5 5 0</orientation_in_parent_maxParamChange>
+			<orientation_in_child_params>1 1 0</orientation_in_child_params>
+			<orientation_in_child_maxParamChange>5 5 0</orientation_in_child_maxParamChange>
+		</JointParameters>
+		
+		<!--Left tibia marker plate joint setup-->
+		<MarkerPlateParameters name="leftTibiaMarkerPlate">
+			<apply>true</apply>
+			<marker_plate_name>tibia_l_markerPlate_jnt</marker_plate_name>
+			<marker_plate_joint_type>weld</marker_plate_joint_type>
+			<location_in_parent_params>1 1 1</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.1 0.1 0.1</location_in_parent_maxParamChange>
+			<orientation_in_parent_params>1 1 1</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>5 5 5</orientation_in_parent_maxParamChange>
+		</MarkerPlateParameters>
+		
+		<!--Right ankle joint setup-->
+		<JointParameters name="rightAnkleJoint">
+			<apply>true</apply>
+			<joint_name>ankle_r</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>1 1 0</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.01 0.01 0</location_in_parent_maxParamChange>
+			<location_in_child_params>0 0 0</location_in_child_params>
+			<location_in_child_maxParamChange>0 0 0</location_in_child_maxParamChange>
+			<orientation_in_parent_params>1 1 0</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>20 20 0</orientation_in_parent_maxParamChange>
+			<orientation_in_child_params>0 0 0</orientation_in_child_params>
+			<orientation_in_child_maxParamChange>0 0 0</orientation_in_child_maxParamChange>
+		</JointParameters>
+		
+		<!--Right subtalar joint setup-->
+		<JointParameters name="rightSubtalarJoint">
+			<apply>true</apply>
+			<joint_name>subtalar_r</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>0 1 0</location_in_parent_params>
+			<location_in_parent_maxParamChange>0 0.01 0</location_in_parent_maxParamChange>
+			<location_in_child_params>1 1 1</location_in_child_params>
+			<location_in_child_maxParamChange>0.01 0.01 0.01</location_in_child_maxParamChange>
+			<orientation_in_parent_params>0 1 0</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>0 20 0</orientation_in_parent_maxParamChange>
+			<orientation_in_child_params>1 1 0</orientation_in_child_params>
+			<orientation_in_child_maxParamChange>20 20 0</orientation_in_child_maxParamChange>
+		</JointParameters>
+		
+		<!--Left ankle joint setup-->
+		<JointParameters name="leftAnkleJoint">
+			<apply>true</apply>
+			<joint_name>ankle_l</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>1 1 0</location_in_parent_params>
+			<location_in_parent_maxParamChange>0.01 0.01 0</location_in_parent_maxParamChange>
+			<location_in_child_params>0 0 0</location_in_child_params>
+			<location_in_child_maxParamChange>0 0 0</location_in_child_maxParamChange>
+			<orientation_in_parent_params>1 1 0</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>20 20 0</orientation_in_parent_maxParamChange>
+			<orientation_in_child_params>0 0 0</orientation_in_child_params>
+			<orientation_in_child_maxParamChange>0 0 0</orientation_in_child_maxParamChange>
+		</JointParameters>
+		
+		<!--Right subtalar joint setup-->
+		<JointParameters name="leftSubtalarJoint">
+			<apply>true</apply>
+			<joint_name>subtalar_l</joint_name>
+			<joint_type>Custom</joint_type>
+			<location_in_parent_params>0 1 0</location_in_parent_params>
+			<location_in_parent_maxParamChange>0 0.01 0</location_in_parent_maxParamChange>
+			<location_in_child_params>1 1 1</location_in_child_params>
+			<location_in_child_maxParamChange>0.01 0.01 0.01</location_in_child_maxParamChange>
+			<orientation_in_parent_params>0 1 0</orientation_in_parent_params>
+			<orientation_in_parent_maxParamChange>0 20 0</orientation_in_parent_maxParamChange>
+			<orientation_in_child_params>1 1 0</orientation_in_child_params>
+			<orientation_in_child_maxParamChange>20 20 0</orientation_in_child_maxParamChange>
+		</JointParameters>
+		
+		<!--Input settings-->
+		<InputSettings>
+		
+			<input_model_file>Patient4_plated.osim</input_model_file>
+			<accuracy>1e-5</accuracy>
+			<output_model_file>Patient4_optModel.osim</output_model_file>
+			<scale_set_file>ScaleSetSetupFile.xml</scale_set_file>
+			
+			<!--Optimization groups-->
+			<OptimizationGroupings>
+				
+				<!--Full body optimization-->
+				<OptimizationGroup name="UpperPlates">
+					<marker_file>Patient4_TMGait_0pt5_02_left_25.trc</marker_file>
+					<time_range>31.860000000000 33.730000000000</time_range>
+					<report_errors>true</report_errors>
+					<output_motion_file>ikAngles.mot</output_motion_file>
+					<report_marker_locations>true</report_marker_locations>
+					<ik_set_file>IKTasksSetupFile.xml</ik_set_file>
+					<optimization_order>1</optimization_order>
+					<WhichJoints>
+					</WhichJoints>
+					<WhichMarkerPlates>
+						<marker_plate_name>torso_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>pelvis_markerPlate_jnt</marker_plate_name>
+					</WhichMarkerPlates>
+					<penalize_changes>true</penalize_changes>
+					<scale_segments>false</scale_segments>
+					<scale_directions>0 0 0</scale_directions>
+				</OptimizationGroup>
+				
+				<!--Hip optimization-->
+				<OptimizationGroup name="hip">
+					<marker_file>Patient4_HipIso.trc</marker_file>
+					<time_range>0 26.9500</time_range>
+					<report_errors>true</report_errors>
+					<output_motion_file>ikAngles.mot</output_motion_file>
+					<report_marker_locations>true</report_marker_locations>
+					<ik_set_file>IKTasksSetupFile_Hip.xml</ik_set_file>
+					<optimization_order>2</optimization_order>
+					<WhichJoints>
+						<joint_name>hip_r</joint_name>
+						<joint_name>hip_l</joint_name>
+					</WhichJoints>
+					<WhichMarkerPlates>
+						<marker_plate_name>pelvis_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>femur_r_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>femur_l_markerPlate_jnt</marker_plate_name>
+					</WhichMarkerPlates>
+					<SymmetricJointPair name="pair1">
+						<WhichJoints>
+							<joint_name>hip_r</joint_name>
+							<joint_name>hip_l</joint_name>
+						</WhichJoints>
+						<enforce_joint_symmetry>tz</enforce_joint_symmetry>
+						<is_reflected_translation>0 0 1</is_reflected_translation>
+					</SymmetricJointPair>
+					<penalize_changes>true</penalize_changes>
+					<scale_segments>true</scale_segments>
+					<scale_directions>0 0 1</scale_directions>
+				</OptimizationGroup>
+				
+				<!--Knee optimization-->
+				<OptimizationGroup name="knee">
+					<marker_file>Patient4_KneeIso.trc</marker_file>
+					<time_range>0 18.6200</time_range>
+					<report_errors>true</report_errors>
+					<output_motion_file>ikAngles.mot</output_motion_file>
+					<report_marker_locations>true</report_marker_locations>
+					<ik_set_file>IKTasksSetupFile_Knee.xml</ik_set_file>
+					<optimization_order>3</optimization_order>
+					<WhichJoints>
+						<joint_name>femur_coord_r</joint_name>
+						<joint_name>femur_coord_l</joint_name>
+					</WhichJoints>
+					<WhichMarkerPlates>
+						<marker_plate_name>tibia_r_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>tibia_l_markerPlate_jnt</marker_plate_name>
+					</WhichMarkerPlates>
+					<penalize_changes>true</penalize_changes>
+					<scale_segments>true</scale_segments>
+					<scale_directions>0 1 0</scale_directions>
+				</OptimizationGroup>
+				
+				<!--Ankle optimization-->
+				<OptimizationGroup name="ankle">
+					<marker_file>Patient4_AnkleIso.trc</marker_file>
+					<time_range>0 15.6600</time_range>
+					<report_errors>true</report_errors>
+					<output_motion_file>ikAngles.mot</output_motion_file>
+					<report_marker_locations>true</report_marker_locations>
+					<ik_set_file>IKTasksSetupFile_Ankle.xml</ik_set_file>
+					<optimization_order>4</optimization_order>
+					<WhichJoints>
+						<joint_name>ankle_r</joint_name>
+						<joint_name>subtalar_r</joint_name>
+						<joint_name>ankle_l</joint_name>
+						<joint_name>subtalar_l</joint_name>
+					</WhichJoints>
+					<penalize_changes>true</penalize_changes>
+					<scale_segments>false</scale_segments>
+					<scale_directions>0 1 0</scale_directions>
+				</OptimizationGroup>
+				
+				<!--Full body optimization-->
+				<OptimizationGroup name="all">
+					<marker_file>Patient4_TMGait_0pt5_02_left_25.trc</marker_file>
+					<time_range>31.860000000000 33.730000000000</time_range>
+					<report_errors>true</report_errors>
+					<output_motion_file>ikAngles.mot</output_motion_file>
+					<report_marker_locations>true</report_marker_locations>
+					<ik_set_file>IKTasksSetupFile.xml</ik_set_file>
+					<optimization_order>5</optimization_order>
+					<WhichJoints>
+						<joint_name>hip_r</joint_name>
+						<joint_name>hip_l</joint_name>
+						<joint_name>femur_coord_r</joint_name>
+						<joint_name>femur_coord_l</joint_name>
+						<joint_name>ankle_r</joint_name>
+						<joint_name>subtalar_r</joint_name>
+						<joint_name>ankle_l</joint_name>
+						<joint_name>subtalar_l</joint_name>
+					</WhichJoints>
+					<WhichMarkerPlates>
+						<marker_plate_name>torso_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>pelvis_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>femur_r_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>femur_l_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>tibia_r_markerPlate_jnt</marker_plate_name>
+						<marker_plate_name>tibia_l_markerPlate_jnt</marker_plate_name>
+					</WhichMarkerPlates>
+					<SymmetricJointPair name="pair1">
+						<WhichJoints>
+							<joint_name>hip_r</joint_name>
+							<joint_name>hip_l</joint_name>
+						</WhichJoints>
+						<enforce_joint_symmetry>ty</enforce_joint_symmetry>
+						<enforce_joint_symmetry>tz</enforce_joint_symmetry>
+						<is_reflected_translation>0 0 1</is_reflected_translation>
+					</SymmetricJointPair>
+					<penalize_changes>true</penalize_changes>
+					<scale_segments>true</scale_segments>
+					<scale_directions>0 1 1</scale_directions>
+				</OptimizationGroup>
+				
+			</OptimizationGroupings>
+			<!--End optimization groups-->
+			
+		</InputSettings>
+		
+		</objects>
+		<!--End objects-->
+		
+	</startFile>
+</OpenSimDocument>

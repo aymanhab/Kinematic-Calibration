@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="30000">
+	
+	<!--Scale set-->
+	<ScaleSet name="ScaleSet">
+		
+		<!--Objects-->
+		<objects>
+		
+			<Scale name="ground">
+				<scales>1 1 1</scales>
+				<segment>ground</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="pelvis">
+				<scales>1 1 1</scales>
+				<segment>pelvis</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="femur_r">
+				<scales>1 1 1</scales>
+				<segment>femur_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="femur_wlkr_r">
+				<scales>1 1 1</scales>
+				<segment>femur_wlkr_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="tibia_wlkr_r">
+				<scales>1 1 1</scales>
+				<segment>tibia_wlkr_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="tibia_r">
+				<scales>1 1 1</scales>
+				<segment>tibia_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="shank_axis_r">
+				<scales>1 1 1</scales>
+				<segment>shank_axis_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="patella_r">
+				<scales>1 1 1</scales>
+				<segment>patella_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="talus_r">
+				<scales>1 1 1</scales>
+				<segment>talus_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="calcn_r">
+				<scales>1 1 1</scales>
+				<segment>calcn_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="toes_r">
+				<scales>1 1 1</scales>
+				<segment>toes_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="femur_l">
+				<scales>1 1 1</scales>
+				<segment>femur_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="femur_wlkr_l">
+				<scales>1 1 1</scales>
+				<segment>femur_wlkr_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="tibia_wlkr_l">
+				<scales>1 1 1</scales>
+				<segment>tibia_wlkr_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="tibia_l">
+				<scales>1 1 1</scales>
+				<segment>tibia_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="shank_axis_l">
+				<scales>1 1 1</scales>
+				<segment>shank_axis_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="patella_l">
+				<scales>1 1 1</scales>
+				<segment>patella_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="talus_l">
+				<scales>1 1 1</scales>
+				<segment>talus_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="calcn_l">
+				<scales>1 1 1</scales>
+				<segment>calcn_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="toes_l">
+				<scales>1 1 1</scales>
+				<segment>toes_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="torso">
+				<scales>1 1 1</scales>
+				<segment>torso</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="humerus_r">
+				<scales>1 1 1</scales>
+				<segment>humerus_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="ulna_r">
+				<scales>1 1 1</scales>
+				<segment>ulna_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="radius_r">
+				<scales>1 1 1</scales>
+				<segment>radius_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="hand_r">
+				<scales>1 1 1</scales>
+				<segment>hand_r</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="humerus_l">
+				<scales>1 1 1</scales>
+				<segment>humerus_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="ulna_l">
+				<scales>1 1 1</scales>
+				<segment>ulna_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="radius_l">
+				<scales>1 1 1</scales>
+				<segment>radius_l</segment>
+				<apply>true</apply>
+			</Scale>
+			
+			<Scale name="hand_l">
+				<scales>1 1 1</scales>
+				<segment>hand_l</segment>
+				<apply>true</apply>
+			</Scale>
+		
+		</objects>
+		<!--End objects-->
+		
+		<groups />
+		
+	</ScaleSet>
+</OpenSimDocument>

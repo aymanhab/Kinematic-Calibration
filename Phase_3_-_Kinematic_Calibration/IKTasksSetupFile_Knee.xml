@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="30000">
+	<InverseKinemtaticsTool name="IKTool">
+        
+		<!--IKTaskSet-->
+		<IKTaskSet name="IKSet">
+		
+			<!--Objects-->
+			<objects>
+		
+				<IKMarkerTask name="R.ASIS">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.ASIS">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="Sacral">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Thigh.Superior">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Thigh.Inferior">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Thigh.Lateral">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Thigh.Superior">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Thigh.Inferior">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Thigh.Lateral">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Shank.Superior">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Shank.Inferior">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Shank.Lateral">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Shank.Superior">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Shank.Inferior">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Shank.Lateral">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Heel">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Midfoot.Superior">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Midfoot.Lateral">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Toe">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Heel">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Midfoot.Superior">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Midfoot.Lateral">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Toe">
+					<apply>true</apply>
+					<weight>10</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="Chest">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="Neck">
+					<apply>true</apply>
+					<weight>0.5</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="R.Shoulder">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+				<IKMarkerTask name="L.Shoulder">
+					<apply>true</apply>
+					<weight>1</weight>
+				</IKMarkerTask>
+				
+			</objects>
+			<!--End objects-->
+			
+		</IKTaskSet>
+		<!--End IKTaskSet-->
+		
+    </InverseKinemtaticsTool>
+</OpenSimDocument>
